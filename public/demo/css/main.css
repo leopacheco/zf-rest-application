@@ -1,0 +1,46 @@
+/*
+ * douggr/zf-rest-application
+ *
+ * @link https://github.com/douggr/zf-rest-application for the canonical source repository
+ * @version 1.0.0
+ */
+
+html {
+  overflow-y: scroll;
+}
+
+body {
+  padding-top: 60px;
+  padding-bottom: 20px;
+}
+
+a {
+  cursor: pointer;
+}
+
+.alert {
+  opacity: 0.9;
+}
+
+.alert.add-top-margin {
+  margin-top: 30px;
+}
+
+.loading {
+  display: none;
+}
+
+.jumbotron {
+  position: relative;
+  padding: 40px 0;
+  text-shadow: 0 1px 3px rgba(0,0,0,.4), 0 0 30px rgba(0,0,0,.075);
+  margin-bottom: 50px;
+  box-shadow: inset 0 3px 7px rgba(0,0,0,.2), inset 0 -3px 7px rgba(0,0,0,.2);
+}
+
+.jumbotron p {
+  font-size: 24px;
+  font-weight: 300;
+  line-height: 1.25;
+  margin-bottom: 30px;
+}

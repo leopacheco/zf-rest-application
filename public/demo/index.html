@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html class="no-js">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <title>zf-rest demo application &middot; douggr</title>
+    <meta name="description" content="">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="css/bootstrap.min.css">
+    <link rel="stylesheet" href="css/main.css">
+    <link rel="stylesheet" href="css/loading-bar.css">
+    <!--[if lt IE 9]>
+      <script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+      <script>window.html5 || document.write('<script src="js/vendor/html5shiv.js"><\/script>')</script>
+    <![endif]-->
+  </head>
+  <body data-ng-app="zf-rest">
+    <div class="loading">
+      <header class="navbar navbar-default navbar-fixed-top" role="navigation">
+        <div class="container">
+          <div class="navbar-header">
+            <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+              <span class="sr-only">Toggle navigation</span>
+              <span class="icon-bar"></span>
+              <span class="icon-bar"></span>
+              <span class="icon-bar"></span>
+            </button>
+            <a class="navbar-brand" href="#">zf-rest demo application</a>
+          </div>
+
+          <nav class="navbar-collapse collapse" data-ng-controller="NavbarCtrl">
+            <form class="navbar-form navbar-right" role="form" name="frmLogin" data-ng-hide="hasAuth" novalidate>
+              <div class="form-group">
+                <input class="form-control" type="text" name="username" placeholder="Email or username" required data-ng-model="username">
+              </div>
+              <div class="form-group">
+                <input class="form-control" type="password" name="password" placeholder="Password" required data-ng-model="password">
+              </div>
+              <button type="submit" class="btn btn-primary" data-ng-disabled="frmLogin.$invalid" data-btn-login>Sign in</button>
+            </form>
+            <ul class="nav navbar-nav navbar-right" data-ng-show="hasAuth">
+              <li><a href="#/users">Users</a></li>
+              <li class="dropdown">
+                <a class="dropdown-toggle" data-toggle="dropdown">{{ user.username }} <span class="caret"></span></a>
+                <ul class="dropdown-menu" role="menu">
+                  <li><a href="#" data-btn-logout>Logout</a></li>
+                </ul>
+              </li>
+            </ul>
+          </nav>
+        </div>
+      </header>
+
+      <div role="alert" class="container alert alert-{{ notification.type }}" data-ng-class="{'add-top-margin': $first}" data-ng-repeat="notification in notifications.getCurrent()">
+        <button class="close" data-dismiss="alert" type="button" data-ng-click="notifications.remove(notification)">
+          <span aria-hidden="true">&times;</span><span class="sr-only">Close</span>
+        </button>
+        <h4 data-translate>{{ notification.data.message }}</h4>
+        <p data-ng-repeat="detail in notification.data.details">
+          {{ detail.message }}
+        </p>
+      </div>
+
+      <main data-ng-view>
+      </main>
+    </div>
+
+    <script src="//ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js"></script>
+    <script src="//ajax.googleapis.com/ajax/libs/angularjs/1.2.23/angular.js"></script>
+    <script src="//ajax.googleapis.com/ajax/libs/angularjs/1.2.23/angular-cookies.min.js"></script>
+    <script src="//ajax.googleapis.com/ajax/libs/angularjs/1.2.23/angular-resource.min.js"></script>
+    <script src="//ajax.googleapis.com/ajax/libs/angularjs/1.2.23/angular-route.min.js"></script>
+    <script src="app/vendor/bootstrap.min.js"></script>
+    <script src="app/vendor/bindonce.min.js"></script>
+    <script src="app/vendor/loading-bar.min.js"></script>
+    <script src="app/app.js"></script>
+    <script src="app/auth/service.js"></script>
+    <script src="app/auth/directive.js"></script>
+    <script src="app/home/routes.js"></script>
+    <script src="app/navbar/controller.js"></script>
+    <script src="app/notifications/service.js"></script>
+    <script src="app/user/routes.js"></script>
+    <script src="app/user/service.js"></script>
+    <script src="app/user/controller.js"></script>

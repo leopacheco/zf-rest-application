@@ -1,0 +1,28 @@
+{
+  "authors": [
+    {
+      "name": "Douglas Gontijo",
+      "homepage": "http://github.com/douggr"
+    }
+  ],
+  "autoload": {
+    "psr-0": {
+      "": "application/"
+    }
+  },
+  "canonical": "https://github.com/douggr/zf-rest-application",
+  "homepage": "https://github.com/douggr/zf-rest-application",
+  "keywords": [
+    "framework",
+    "rest",
+    "zend",
+    "zf1"
+  ],
+  "license": "MIT",
+  "name": "douggr/zf-rest-application",
+  "require": {
+    "douggr/zf-rest": "1.0.0"
+  },
+  "type": "application",
+  "version": "1.0.1"
+}

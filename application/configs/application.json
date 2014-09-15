@@ -1,0 +1,112 @@
+{
+  "production": {
+    "name": "douggr/zf-rest-application",
+    "description": "",
+
+    "bootstrap": {
+      "class": "Bootstrap",
+      "path": "APPLICATION_PATH/Bootstrap.php"
+    },
+
+    "config": {
+      "mail": "APPLICATION_PATH/configs/mail.json",
+      "router": "APPLICATION_PATH/configs/router.json"
+    },
+
+    "pagination": {
+      "defaultPageSize": 20,
+      "maxPageSize": 1000
+    },
+
+    "phpSettings": {
+      "default_charset": "utf-8",
+      "display_errors": false,
+      "display_startup_errors": false
+    },
+
+    "resources": {
+      "frontController": {
+        "moduleDirectory": "APPLICATION_PATH/modules",
+        "defaultModule": "default",
+        "params": {
+          "displayExceptions": false,
+          "prefixDefaultModule": true
+        }
+      },
+
+      "multidb": {
+        "default": {
+          "adapter": "PDO_MYSQL",
+          "charset": "utf8",
+          "dbname": "",
+          "host": "",
+          "password": "",
+          "username": ""
+        }
+      },
+
+      "translate": {
+        "adapter": "array",
+        "locale": "en",
+        "content": "APPLICATION_PATH/lang",
+        "scan": "filename",
+        "options": {
+          "disableNotices": true,
+          "cacheEnabled": true
+        }
+      }
+    }
+  },
+
+  "staging": {
+    "_extends": "production",
+    "name": "douggr/zf-rest-application (staging)",
+
+
+    "resources": {
+      "multidb": {
+        "default": {
+          "dbname": "",
+          "host": "localhost",
+          "password": "",
+          "username": ""
+        }
+      }
+    }
+  },
+
+  "testing": {
+    "_extends": "staging",
+    "name": "douggr/zf-rest-application (testing)",
+
+    "phpSettings": {
+      "display_errors": true,
+      "display_startup_errors": true
+    },
+
+    "resources": {
+      "multidb": {
+        "default": {
+          "dbname": "",
+          "password": "",
+          "username": ""
+        }
+      }
+    }
+  },
+
+  "development": {
+    "_extends": "testing",
+    "name": "douggr/zf-rest-application (development)",
+
+    "resources": {
+      "multidb": {
+        "default": {
+          "dbname": "zf-rest",
+          "password": "root",
+          "username": "root"
+        }
+      }
+    }
+  }
+}

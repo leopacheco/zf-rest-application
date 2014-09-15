@@ -1,0 +1,91 @@
+{
+  "production": {
+
+    "resources": {
+      "router": {
+        "routes": {
+          "children-00-all": {
+            "route": "/:controller/:id/:children-00",
+            "defaults": {
+              "module": "default"
+            },
+            "reqs": {
+              "id": "\\d+"
+            }
+          },
+
+          "children-00-get": {
+            "route": "/:controller/:id/:children-00/:children-00-id",
+            "defaults": {
+              "module": "default"
+            },
+            "reqs": {
+              "id": "\\d+",
+              "children-00-id": "\\d+"
+            }
+          },
+
+          "children-01-all": {
+            "route": "/:controller/:id/:children-00/:children-00-id/:children-01",
+            "defaults": {
+              "module": "default"
+            },
+            "reqs": {
+              "id": "\\d+",
+              "children-00-id": "\\d+"
+            }
+          },
+
+          "children-01-get": {
+            "route": "/:controller/:id/:children-00/:children-00-id/:children-01/:children-01-id",
+            "defaults": {
+              "module": "default"
+            },
+            "reqs": {
+              "id": "\\d+",
+              "children-00-id": "\\d+",
+              "children-01-id": "\\d+"
+            }
+          },
+
+          "children-02-all": {
+            "route": "/:controller/:id/:children-00/:children-00-id/:children-01/:children-01-id/:children-02",
+            "defaults": {
+              "module": "default"
+            },
+            "reqs": {
+              "id": "\\d+",
+              "children-00-id": "\\d+",
+              "children-01-id": "\\d+"
+            }
+          },
+
+          "children-02-get": {
+            "route": "/:controller/:id/:children-00/:children-00-id/:children-01/:children-01-id/:children-02/:children-02-id",
+            "defaults": {
+              "module": "default"
+            },
+            "reqs": {
+              "id": "\\d+",
+              "children-00-id": "\\d+",
+              "children-01-id": "\\d+",
+              "children-02-id": "\\d+"
+            }
+          }
+        }
+      }
+    }
+  },
+
+  "staging": {
+    "_extends": "production"
+  },
+
+  "testing": {
+    "_extends": "production"
+  },
+
+  "development": {
+    "_extends": "production"
+  }
+}

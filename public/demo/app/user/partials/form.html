@@ -1,0 +1,46 @@
+<div class="container">
+  <form name="form" role="form" novalidate data-ng-submit="saveUser(form, model.id)">
+    <fieldset>
+      <div class="row">
+        <div class="col-md-6 form-group" data-ng-class="{'has-error':form.first_name.$invalid}">
+          <label for="first_name">First Name</label>
+          <input class="form-control" type="text" id="first_name" name="first_name" required data-ng-model="model.first_name">
+          <p class="help-block" data-ng-repeat="(type, invalid) in form.first_name.$error" data-ng-show="invalid">
+            <i class="glyphicon glyphicon-warning-sign"></i> {{ getErrMessage(type) }}
+          </p>
+        </div>
+
+        <div class="col-md-6 form-group" data-ng-class="{'has-error':form.last_name.$invalid}">
+          <label for="last_name">Last Name</label>
+          <input class="form-control" type="text" id="last_name" name="last_name" required data-ng-model="model.last_name">
+          <p class="help-block" data-ng-repeat="(type, invalid) in form.last_name.$error" data-ng-show="invalid">
+            <i class="glyphicon glyphicon-warning-sign"></i> {{ getErrMessage(type) }}
+          </p>
+        </div>
+      </div>
+
+      <div class="row">
+        <div class="col-md-6 form-group" data-ng-class="{'has-error':form.email.$invalid}">
+          <label for="email">Email</label>
+          <input class="form-control" type="email" id="email" name="email" required data-ng-model="model.email">
+          <p class="help-block" data-ng-repeat="(type, invalid) in form.email.$error" data-ng-show="invalid">
+            <i class="glyphicon glyphicon-warning-sign"></i> {{ getErrMessage(type) }}
+          </p>
+        </div>
+
+        <div class="col-md-6 form-group" data-ng-class="{'has-error':form.password.$invalid}">
+          <label for="password">Password</label>
+          <input class="form-control" type="password" id="password" name="password" required data-ng-minlength="3" data-ng-model="model.password">
+          <p class="help-block" data-ng-repeat="(type, invalid) in form.password.$error" data-ng-show="invalid">
+            <i class="glyphicon glyphicon-warning-sign"></i> {{ getErrMessage(type) }}
+          </p>
+        </div>
+      </div>
+    </fieldset>
+
+    <footer>
+      <button type="submit" class="btn btn-primary" data-ng-disabled="form.$invalid">Submit</button>
+      <a class="btn btn-default" href="#/users">Cancel</a>
+    </footer>
+  </form>
+</div>
