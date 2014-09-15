@@ -34,7 +34,7 @@ Please note, running `install.sh` will **destroy** the `$DATABASE` if it exists.
 $ cd ../../../../public
 $ php -S 127.0.0.1:4035
 ```
-And open http://127.0.0.1:4035/demo/ (note the trailing slash).
+And open http://127.0.0.1:4035/demo/ (note the trailing slash). Login with `admin@example.com`, password `12345`.
 
 ## Note
 This demo is intended to show the [zf-rest](https://github.com/douggr/zf-rest) extension and NOT an AngularJS app or how to use AngularJS. I made this just for fun.
